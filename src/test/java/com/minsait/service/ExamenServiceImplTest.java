@@ -123,4 +123,15 @@ class ExamenServiceImplTest {
         verify(preguntasRepository, times(0)).savePreguntas(anyList());
         verify(examenRepository, times(1)).save(examen);
     }
+
+    @Test
+    void testGenerateIDsAutomatically() {
+        //given
+        Examen examen1 = Datos.EXAMENES.get(0);
+        Examen examen2 = Datos.EXAMENES.get(1);
+        //when - then
+        assertEquals(1, examen1.getId());
+        assertEquals(2, examen2.getId());
+
+    }
 }
