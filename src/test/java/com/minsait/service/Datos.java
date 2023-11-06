@@ -9,12 +9,12 @@ import java.util.List;
 public class Datos {
 
     public static final List<Examen> EXAMENES = Arrays.asList(
-            new Examen(1L, "matematicas"),
-            new Examen(2L, "historia"),
-            new Examen(3L, "Quimica")
+            new Examen("matematicas"),
+            new Examen("historia"),
+            new Examen("Quimica")
     );
 
-    public static final Examen examen = new Examen(4L, "Programacion");
+    public static final Examen examen = new Examen("Programacion");
 
     public static final List<String> PREGUNTAS = Arrays.asList(
             "Aritmetica",

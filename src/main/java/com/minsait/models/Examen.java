@@ -10,12 +10,14 @@ import java.util.List;
 @Getter
 public class Examen {
 
+    private static Long idIdentity = 1L;
     private Long id;
     private String nombre;
     List<String> preguntas;
 
-    public Examen(Long id, String nombre) {
-        this.id = id;
+    public Examen(String nombre) {
+        this.id = Examen.idIdentity;
+        Examen.idIdentity++;
         this.nombre = nombre;
         this.preguntas = new ArrayList<>();
     }

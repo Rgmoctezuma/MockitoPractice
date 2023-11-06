@@ -112,4 +112,15 @@ class ExamenServiceImplTest {
         when(examenRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
         assertNull(service.findExamenPorNombreConPreguntas("non-exist"));
     }
+
+    @Test
+    void saveExamWithoutPreguntas() {
+        //given
+        Examen examen = Datos.examen;
+        //when
+        service.saveExamen(examen);
+        //then
+        verify(preguntasRepository, times(0)).savePreguntas(anyList());
+        verify(examenRepository, times(1)).save(examen);
+    }
 }
